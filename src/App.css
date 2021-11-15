@@ -1,6 +1,5 @@
 .App {
   height: 100vh;
-  background-color: #1a202c;
   overflow: scroll;
   text-align: center;
 }
@@ -24,12 +23,16 @@
   margin: 0;
   font-size: 50px;
   font-weight: bold;
-  color: white;
+  background-image: linear-gradient(145deg, rgba(245,212,20,1) 0%, rgba(232,52,52,1) 100%);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px navy;
 }
 
 .sub-text {
   font-size: 25px;
   color: white;
+  -webkit-text-stroke: 1px navy;
 }
 
 .gradient-text {
@@ -52,6 +55,19 @@
   color: white;
 }
 
+.react-icons-heart {
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+}
+
+.react-icons-heart path {
+  fill: #4e44ce;
+}
+.upvote:hover, .send-tip:hover {
+  opacity: 0.5;
+}
+
 .connect-wallet-button {
   background: -webkit-linear-gradient(left, #60c657, #35aee2);
   background-size: 200% 200%;
@@ -65,26 +81,10 @@
   margin-left: 10px;
 }
 
-.footer-container {
+.update-system {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  padding-bottom: 45px;
-}
-
-.twitter-logo {
-  width: 35px;
-  height: 35px;
-}
-
-.footer-text {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .gif-grid {
@@ -109,22 +109,82 @@
   height: 300px;
   border-radius: 10px;
   object-fit: cover;
+  border: 1px solid #fff;
 }
 
 .connected-container input[type='text'] {
   display: inline-block;
   color: white;
   padding: 10px;
-  width: 50%;
-  height: 60px;
+  width: 40%;
+  height: 50px;
   font-size: 16px;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 10px;
-  margin: 50px auto;
+  margin: 40px auto 60px auto;
 }
 
 .connected-container button {
   height: 50px;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 40vh;
+  width: 40vw;
+  background: -webkit-linear-gradient(left, #4e44ce, #35aee2);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  z-index: 1;
+  border-radius: 10%;
+  border: 1px solid black;
+  -webkit-box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.amount-form input {
+  border-radius: 20px;
+}
+
+.send-button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 0 40px;
+  width: 20%;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.send-button span {
+  text-align: center;
+}
+
+.exit {
+  margin-top: 4em;
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+}
+
+.exit:hover, .send-button:hover {
+  opacity: 0.5;
 }
